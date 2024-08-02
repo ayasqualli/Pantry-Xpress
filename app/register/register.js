@@ -52,11 +52,6 @@ const Register = () => {
     }
   };
 
-
-  if (!isClient) {
-    return null; // or a loading spinner
-  }
-
   return (
     <Layout>
       <Container maxWidth="sm">
