@@ -7,6 +7,7 @@ import { collection, query, where, getDocs, addDoc, deleteDoc, doc } from "fireb
 import { Box, Button, TextField, List, ListItem, ListItemText, IconButton, Select, MenuItem, FormControl, InputLabel, Typography, CircularProgress } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -104,9 +105,20 @@ const Dashboard = () => {
     <Box mt={4} px={2}>
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
         <Typography variant="h4">Pantry Dashboard</Typography>
-        <Button variant="outlined" onClick={handleLogout}>
-          Logout
-        </Button>
+        <Box>
+          <Button 
+            component={Link} 
+            href="/recipe-generator" 
+            variant="contained" 
+            color="secondary" 
+            sx={{ mr: 2 }}
+          >
+            Recipe Generator
+          </Button>
+          <Button variant="outlined" onClick={handleLogout}>
+            Logout
+          </Button>
+        </Box>
       </Box>
 
       <TextField
