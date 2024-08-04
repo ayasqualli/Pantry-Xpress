@@ -145,7 +145,7 @@ const RecipeGenerator = () => {
       {recipes.length > 0 ? (
         <List>
           {recipes.map((recipe) => (
-            <ListItem key={recipe.id}>
+            <ListItem key={recipe.id} alignItems="flex-start">
               <ListItemText 
                 primary={recipe.name} 
                 secondary={
@@ -153,13 +153,19 @@ const RecipeGenerator = () => {
                     <Typography component="span" variant="body2" color="textPrimary">
                       Ingredients: {recipe.usedIngredients.join(', ')}
                     </Typography>
-                    <br />
-                    <Typography component="span" variant="body2" color="textSecondary">
-                      <a href={recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a>
-                    </Typography>
                   </>
                 }
               />
+              <Button
+                variant="contained"
+                color="primary"
+                href={recipe.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ mt: 1 }}
+              >
+                View Recipe
+              </Button>
             </ListItem>
           ))}
         </List>
