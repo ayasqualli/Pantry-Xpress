@@ -1,4 +1,7 @@
 "use client";
+
+import { SpeedInsights } from "@vercel/speed-insights/next"  // Speed analytics for Vercel Deployement
+
 import "./globals.css"
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
