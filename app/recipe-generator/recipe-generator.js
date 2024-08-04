@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Typography, List, ListItem, ListItemText, CircularProgress } from '@mui/material';
+import { Box, Button, Typography, List, ListItem, ListItemText, CircularProgress, Divider } from '@mui/material';
 import { db, auth } from "../firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -144,29 +144,32 @@ const RecipeGenerator = () => {
 
       {recipes.length > 0 ? (
         <List>
-          {recipes.map((recipe) => (
-            <ListItem key={recipe.id} alignItems="flex-start">
-              <ListItemText 
-                primary={recipe.name} 
-                secondary={
-                  <>
-                    <Typography component="span" variant="body2" color="textPrimary">
-                      Ingredients: {recipe.usedIngredients.join(', ')}
-                    </Typography>
-                  </>
-                }
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                href={recipe.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ mt: 1 }}
-              >
-                View Recipe
-              </Button>
-            </ListItem>
+          {recipes.map((recipe, index) => (
+            <React.Fragment key={recipe.id}>
+              <ListItem alignItems="flex-start">
+                <ListItemText 
+                  primary={recipe.name} 
+                  secondary={
+                    <>
+                      <Typography component="span" variant="body2" color="textPrimary">
+                        Ingredients: {recipe.usedIngredients.join(', ')}
+                      </Typography>
+                    </>
+                  }
+                />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={recipe.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ mt: 1 }}
+                >
+                  View Recipe
+                </Button>
+              </ListItem>
+              {index < recipes.length - 1 && <Divider component="li" />}
+            </React.Fragment>
           ))}
         </List>
       ) : (
