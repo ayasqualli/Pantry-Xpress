@@ -1,6 +1,8 @@
 "use client";
 
-import { SpeedInsights } from "@vercel/speed-insights/next"  // Speed analytics for Vercel Deployement
+import { SpeedInsights } from "@vercel/speed-insights/next"  // Speed insights for Vercel Deployement
+import { Analytics } from "@vercel/analytics/react"
+
 
 import "./globals.css"
 import { ThemeProvider } from '@mui/material/styles';
@@ -40,6 +42,8 @@ const Layout = ({ children }) => {
             {children}
           </Container>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
