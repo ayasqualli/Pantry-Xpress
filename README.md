@@ -28,7 +28,7 @@ Pantry Tracker is a web application that helps users manage their pantry invento
 
 1. Clone the repository:
    ```
-   git clone https://github.com/ayasqualli/pantry-tracker.git
+   git clone https://github.com/ayasqualli/Pantry-Xpress.git
    ```
 
 2. Navigate to the project directory:
