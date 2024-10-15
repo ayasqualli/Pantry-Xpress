@@ -64,7 +64,8 @@ Pantry Tracker is a web application that helps users manage their pantry invento
 - Use email/password or Google Sign-In to register and log in.
 - After successful registration, you'll be redirected to the login page.
 - Once logged in, you can access the dashboard to manage your pantry.
-- Integration of AI and ML to generate recipes and a more smart management (feature to be implemented).
+- Integration of AI and ML to generate recipes
+- Image Recognition to add and search items(feature to be implemented).
 
 ## Contributing
 
